@@ -1,38 +1,165 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cardo', serif;
+  font-family: 'Work Sans', sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-bottom: 2px solid black;
+  padding: 2vh;
+  background-color: #c2c2c2
+}
+
+.App-header p {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+#title {
+  font-size: 2rem;
+}
+
+#related-links button {
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 1.5rem;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#related-links button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  background-color: #3c3c3c;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#graphics {
+  background-color: black;
+  color: white;
+}
+
+#gif {
+  width: 90vw;
+  margin: 0 auto;
+  padding-top: 4vh;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+#iframediv {
+  border-bottom: 1px solid white;
+  padding-bottom: 2vh;
+}
+
+#graphics iframe {
+  width: 80vw;
+  height: 50vh;
+  border: none;
+  margin: 5vh 0;
+}
+
+
+
+
+#main {
+  background-color: #e8e8e8;
+  padding-bottom: 20vh;
+  border-bottom: 2px solid black;
+}
+
+.section-heading {
+  padding-top: 10vh;
+  font-size: 2.5rem;
+}
+
+.section-content {
+  padding: 0 5vw;
+  padding-top: 2vh;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  text-align: justify;
+}
+
+.subsection {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  padding: 0 5vw;
+  margin-bottom: 0;
+}
+
+.imgStyle {
+  max-width: 35%;
+}
+
+.img-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+#footer {
+  padding-bottom: 10vh;
+}
+
+.authors {
+  display: flex;
+  justify-content: center;
+  gap: 15vw;
+  padding-top: 3vh;
+}
+
+.authorImg {
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+}
+
+.authorName {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.authorLink{
+  margin: 0 0.5rem;
+}
+
+
+@media screen and (max-width: 600px) {
+  #graphics iframe {
+    width: 90vw;
+    height: 40vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-header p {
+    font-size: 1em;
+  }
+  #title {
+    font-size: 1.5rem;
+  }
+
+  #related-links button {
+    scale: 0.8;
+  }
+
+  .imgStyle {
+    max-width: 90%;
+  }
+
+  .authorImg {
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
   }
 }
