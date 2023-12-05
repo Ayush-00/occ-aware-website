@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/occ-aware-gait/static/css/main.52c0ce92.css",
+    "main.js": "/occ-aware-gait/static/js/main.fd29cbfc.js",
+    "static/js/787.b5b43850.chunk.js": "/occ-aware-gait/static/js/787.b5b43850.chunk.js",
+    "index.html": "/occ-aware-gait/index.html",
+    "main.52c0ce92.css.map": "/occ-aware-gait/static/css/main.52c0ce92.css.map",
+    "main.fd29cbfc.js.map": "/occ-aware-gait/static/js/main.fd29cbfc.js.map",
+    "787.b5b43850.chunk.js.map": "/occ-aware-gait/static/js/787.b5b43850.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52c0ce92.css",
+    "static/js/main.fd29cbfc.js"
+  ]
+}
