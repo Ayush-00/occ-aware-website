@@ -10,7 +10,7 @@ function App() {
         <p id="title">Improving GAIT Recognition with Intrinsic Occlusion Type Awareness</p>
         <div id="related-links">
           <a href="https://github.com/Ayush-00/occ-aware-gait"><button className="related-link-btn">GitHub</button></a>
-          <a href="https://arxiv.org/abs/1506.02640"><button className="related-link-btn">arXiv</button></a>
+          <a href="https://arxiv.org/abs/2312.02290"><button className="related-link-btn">arXiv</button></a>
         </div>
       </header>
 
@@ -86,7 +86,7 @@ function App() {
               <a className='authorLink' href="https://github.com/Ayush-00" target="_blank" rel="noopener noreferrer">
                 <FaGithub color='black' size={"30"}/>
               </a>
-              <a className='authorLink' href="mailto:your.email@example.com">
+              <a className='authorLink' href="mailto:agupt120@jh.edu">
                 <FaEnvelope size={"30"}/>
               </a>
             </div>
