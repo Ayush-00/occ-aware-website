@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/occ-aware-website/static/css/main.0e7fbb7d.css",
-    "main.js": "/occ-aware-website/static/js/main.d8c41981.js",
+    "main.css": "/occ-aware-website/static/css/main.2ebe7f42.css",
+    "main.js": "/occ-aware-website/static/js/main.21969295.js",
     "static/js/787.b5b43850.chunk.js": "/occ-aware-website/static/js/787.b5b43850.chunk.js",
     "index.html": "/occ-aware-website/index.html",
-    "main.0e7fbb7d.css.map": "/occ-aware-website/static/css/main.0e7fbb7d.css.map",
-    "main.d8c41981.js.map": "/occ-aware-website/static/js/main.d8c41981.js.map",
+    "main.2ebe7f42.css.map": "/occ-aware-website/static/css/main.2ebe7f42.css.map",
+    "main.21969295.js.map": "/occ-aware-website/static/js/main.21969295.js.map",
     "787.b5b43850.chunk.js.map": "/occ-aware-website/static/js/787.b5b43850.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e7fbb7d.css",
-    "static/js/main.d8c41981.js"
+    "static/css/main.2ebe7f42.css",
+    "static/js/main.21969295.js"
   ]
 }
