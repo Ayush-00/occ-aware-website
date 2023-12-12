@@ -6,8 +6,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>You can run but not hide</p>
-        <p id="title">Improving GAIT Recognition with Intrinsic Occlusion Type Awareness</p>
+        <p >You Can Run but not Hide:</p>
+        <p id="title">Improving Gait Recognition with Intrinsic Occlusion Type Awareness</p>
+        <p id="authorTitle"><span>Ayush Gupta</span> <span>Rama Chellappa</span></p>
         <div id="related-links">
           <a href="https://github.com/Ayush-00/occ-aware-gait"><button className="related-link-btn">GitHub</button></a>
           <a href="https://arxiv.org/abs/2312.02290"><button className="related-link-btn">arXiv</button></a>
@@ -15,10 +16,6 @@ function App() {
       </header>
 
       <div id="graphics">
-        <div id="gif">
-          <img src={process.env.PUBLIC_URL + "/bg.gif"} alt="animated GIF" />
-          <img src={process.env.PUBLIC_URL + "/cl.gif"} alt="animated GIF" />
-        </div>
         <div id="iframediv">
           <iframe title="Improving GAIT Recognition" src="https://www.youtube.com/embed/gIo8BDCrAuE"  allowFullScreen></iframe>
         </div>
@@ -38,11 +35,11 @@ function App() {
         </div>
         <div className="section-content">
           <p>
-            We choose outdoor gait recognition datasets in this work. We work with the GREW and the BRIAR datasets which pose significant challenges to gait recognition, in terms of illumination, turbulence and ranges.
+            We choose outdoor gait recognition datasets in this work. We work with the <a href='https://www.grew-benchmark.org/' target="_blank" rel="noreferrer">GREW</a> and the <a href='https://ieeexplore.ieee.org/document/10031155' target="_blank" rel="noreferrer">BRIAR</a> datasets which pose significant challenges to gait recognition, in terms of illumination, turbulence and ranges.
           </p>
 
           <p>
-            We work with silhouette data, using Detectron 2 to extract binary masks from the frames. We then perform centering and cropping as performed by OpenGait. 
+            We work with silhouette data, using Detectron 2 to extract binary masks from the frames. We then perform centering and cropping as performed by <a href='https://github.com/ShiqiYu/OpenGait' target="_blank" rel="noreferrer">OpenGait</a>. 
           </p>
           <p>
             To work with occlusions, we introduce synthetic occlusions in our preprocessed silhouettes.
@@ -78,6 +75,9 @@ function App() {
           Occlusion detector
         </p>
         <div className="section-content">
+          <div className="img-container">
+            <img src={process.env.PUBLIC_URL +"/occ_d.png"} className="imgStyle" alt="occlusion detector"></img>
+          </div>
           <p>
             The occlusion detector is an auxiliary network trained to generate occlusion relevant features ß. This network is trained on the proxy task of occlusion type classification (Training phase). During inference, the classification head is discarded and the intermediate features ß are used as occlusion features. The occlusion detector can operate in two modes:
           </p>
@@ -92,8 +92,11 @@ function App() {
           Occlusion aware network
         </p>
         <div className="section-content">
+          <div className="img-container">
+            <img src={process.env.PUBLIC_URL +"/main.png"} className="imgStyle" alt="main"></img>
+          </div>
           <p>
-          While training the occlusion aware network, the occluded video is passed through the occlusion detector to generate occlusion features. These features are combined with the intermediate feature of the gait recognition backbone in the <span style={{ fontWeight: '600' }}>occlusion awareness module</span>. It subsequently outputs X’, an occlusion aware version of X (denoted by <span style={{ color: 'purple' }}>purple</span> in the figure). As a result, the later layers and the final gait signature also become occlusion aware.
+            While training the occlusion aware network, the occluded video is passed through the occlusion detector to generate occlusion features. These features are combined with the intermediate feature of the gait recognition backbone in the <span style={{ fontWeight: '600' }}>occlusion awareness module</span>. It subsequently outputs X’, an occlusion aware version of X (denoted by <span style={{ color: 'purple' }}>purple</span> in the figure). As a result, the later layers and the final gait signature also become occlusion aware.
           </p>
         </div>
 
@@ -101,6 +104,9 @@ function App() {
         <p className="subsection">
           Occlusion awareness module
         </p>
+          <div className="img-container">
+            <img src={process.env.PUBLIC_URL +"/experiments.png"} className="imgStyle" alt="occlusion awareness module"></img>
+          </div>
         <div className="section-content">
           <p>
           We try different methods for combining X and ß in the occlusion awareness module. <br />
@@ -126,10 +132,10 @@ function App() {
             Due to the lack of gait recognition methods targeting occlusion, we compare our method with our own baselines. 
           </p>
           <p>
-            Baseline 1: We train the backbone on holistic videos and evaluate it occlusions without any external guidance. This baseline answers the question, “How well would the original backbone perform on occlusions?”
+          <span style={{ fontWeight: '600' }}>Baseline 1:</span> We train the backbone on holistic videos and evaluate it occlusions without any external guidance. This baseline answers the question, “How well would the original backbone perform on occlusions?”
           </p>
           <p>
-            Baseline 2: We re-train the backbone on occlusions. This is the simplest thing we can do to adapt the network to occluded data.
+          <span style={{ fontWeight: '600' }}>Baseline 2:</span> We re-train the backbone on occlusions. This is the simplest thing we can do to adapt the network to occluded data.
           </p>
         </div>
 
@@ -143,26 +149,20 @@ function App() {
             In this section, we experiment with two new types of occlusions: Dynamic occlusions and real occlusion in the BRIAR dataset. 
           </p>
           <div className="img-container">
-            <img src={process.env.PUBLIC_URL +"/dynamic_occ1.gif"} className="imgStyle" alt="synthetic_occ"></img>
-            <img src={process.env.PUBLIC_URL +"/briar-real-occ.gif"} className="imgStyle" alt="synthetic_occ"></img>
+            <img src={process.env.PUBLIC_URL +"/dynamic_occ1.gif"} className="imgStyle" alt="synthetic_occ" style={{ width: '20vw' }}></img>
+            <img src={process.env.PUBLIC_URL +"/briar-real-occ.gif"} className="imgStyle" alt="synthetic_occ" style={{ width: '20vw' }}></img>
           </div>
           <p>
-            Dynamic occlusions: In this type of occlusion, the occlusion patch keeps on moving across the frame in a video.<br />
-            Real occlusions: In the BRIAR dataset, a subset of videos captured from 200m have tall grass which occludes the feet of the subject.
+            <span style={{ fontWeight: '600' }}>Dynamic occlusions:</span> In this type of occlusion, the occlusion patch keeps on moving across the frame in a video.<br />
+            <span style={{ fontWeight: '600' }}>Real occlusions:</span> In the BRIAR dataset, a subset of videos captured from 200m have tall grass which occludes the feet of the subject.
           </p>
           <p>
             We compare our method and Baseline 2 on these new occlusion types, and observe that our method can generalize well on these occlusion types it has not seen during training. 
           </p>
+          <p>
+            For more experiments and results, refer to the <a href="https://arxiv.org/abs/2312.02290">paper</a>.
+          </p>
         </div>
-
-        {/* <div className="section-content">
-          <div className="img-container">
-            <img className="imgStyle" src="1.png" alt="abc"></img>
-            <img className="imgStyle" src="2.png" alt="abc"></img>
-          </div>
-        </div> */}
-
-
 
       </div>
 
@@ -186,16 +186,13 @@ function App() {
           </div>
 
           <div className="author">
-            <img src={process.env.PUBLIC_URL + "/Rachit.png"} alt="Rachit Shah" className="authorImg"></img>
-            <p className="authorName">Rachit Shah</p>
+            <img src={process.env.PUBLIC_URL + "/rama.jpg"} alt="Rama Chellappa" className="authorImg"></img>
+            <p className="authorName">Rama Chellappa</p>
             <div className="authorLinks">
-              <a className='authorLink' href="https://www.linkedin.com/in/ayush-gupta-491b891a2/" target="_blank" rel="noopener noreferrer">
+              <a className='authorLink' href="https://www.linkedin.com/in/rama-chellappa-64970125/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin size={"30"} color='#0077b5'/>
               </a>
-              <a className='authorLink' href="https://github.com/Ayush-00" target="_blank" rel="noopener noreferrer">
-                <FaGithub color='black' size={"30"}/>
-              </a>
-              <a className='authorLink' href="mailto:your.email@example.com">
+              <a className='authorLink' href="mailto:rchella4@jhu.edu">
                 <FaEnvelope size={"30"}/>
               </a>
             </div>

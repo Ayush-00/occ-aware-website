@@ -25,6 +25,16 @@ body {
   font-size: 2rem;
 }
 
+#authorTitle {
+  font-size: 1.2rem;
+  margin-top: 3vh;
+  display: flex;
+  font-weight: 400;
+  justify-content: center;
+  gap: 5vw;
+  font-style: italic;
+}
+
 #related-links button {
   font-size: 1.3rem;
   border: none;
@@ -44,15 +54,6 @@ body {
 #graphics {
   background-color: black;
   color: white;
-}
-
-#gif {
-  width: 90vw;
-  margin: 0 auto;
-  padding-top: 4vh;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
 }
 
 #iframediv {
