@@ -67,9 +67,6 @@ body {
   margin: 5vh 0;
 }
 
-
-
-
 #main {
   background-color: #e8e8e8;
   padding-bottom: 20vh;
@@ -79,6 +76,7 @@ body {
 .section-heading {
   padding-top: 10vh;
   font-size: 2.5rem;
+  border-bottom: 1px solid black;
 }
 
 .section-content {
